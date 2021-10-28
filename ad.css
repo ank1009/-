@@ -1,0 +1,430 @@
+@charset "utf-8";
+
+/*==================================================
+スライダーのためのcss
+===================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+    width:94%;
+    margin:0 auto;
+}
+
+.slider img {
+    width:60vw;/*スライダー内の画像を60vwにしてレスポンシブ化*/
+    height:auto;
+}
+
+.slider .slick-slide {
+  transform: scale(0.8);/*左右の画像のサイズを80%に*/
+  transition: all .5s;/*拡大や透過のアニメーションを0.5秒で行う*/
+  opacity: 0.5;/*透過50%*/
+}
+
+.slider .slick-slide.slick-center{
+  transform: scale(1);/*中央の画像のサイズだけ等倍に*/
+  opacity: 1;/*透過なし*/
+}
+
+
+/*矢印の設定*/
+
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+    position: absolute;/*絶対配置にする*/
+    top: 42%;
+    cursor: pointer;/*マウスカーソルを指マークに*/
+    outline: none;/*クリックをしたら出てくる枠線を消す*/
+    border-top: 2px solid #666;/*矢印の色*/
+    border-right: 2px solid #666;/*矢印の色*/
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev {/*戻る矢印の位置と形状*/
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next {/*次へ矢印の位置と形状*/
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+
+.slick-dots {
+    text-align:center;
+  margin:20px 0 0 0;
+}
+
+.slick-dots li {
+    display:inline-block;
+  margin:0 5px;
+}
+
+.slick-dots button {
+    color: transparent;
+    outline: none;
+    width:8px;/*ドットボタンのサイズ*/
+    height:8px;/*ドットボタンのサイズ*/
+    display:block;
+    border-radius:50%;
+    background:#ccc;/*ドットボタンの色*/
+}
+
+.slick-dots .slick-active button{
+    background:#333;/*ドットボタンの現在地表示の色*/
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+body{
+  background:#eee;
+}
+
+h2,p {
+    text-align:center;
+    padding:20px;
+}
+
+ul{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+a{
+  color: #333;
+}
+
+a:hover,
+a:active{
+  text-decoration: none;
+}
+
+@charset "utf-8";
+
+/*========= バー表示のためのCSS ===============*/
+
+/*タイムライン全体の設定*/
+.timeline{
+  max-width: 400px;
+  width:100%;
+  margin:50px auto;
+  padding:0 30px;
+}
+
+.timeline li{
+    /*線の起点とするためrelativeを設定*/
+    position: relative;
+  list-style: none;
+  padding:0 0 20px 0;
+}
+
+.timeline dl{
+  margin:0 0 20px 3em;
+}
+
+.timeline dd strong{
+  display: block;
+  padding:10px 0;
+}
+
+/*絶対配置で線を設定*/
+.border-line {
+    /*線の位置*/
+  position: absolute;
+  left:0.2em;
+  top:0;
+  width:2px;/*線の太さ*/
+  height:0;/*はじめは高さを0に*/
+  background: #ccc;
+}
+
+/*タイムラインの見出し横の丸の位置と形状*/
+.timeline li::after{
+  content:'';
+  position: absolute;
+  top:0;
+  left:0;
+  width:10px;
+  height: 10px;
+  background:#666;
+  border-radius: 50%;
+}
+
+
+/*========= レイアウトのためのCSS ===============*/
+
+header{
+  background: #333;
+}
+
+h1{
+  font-size:1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px;
+  color: #fff;
+}
+
+h2{
+  font-size:1.2rem;
+  text-align: center;
+  margin: 0 0 30px 0;
+}
+
+p,ul{
+  margin-top:20px;
+}
+
+a{
+  color:#333;
+}
+
+small{
+  background:#333;
+  color:#fff;
+  display: block;
+  text-align: center;
+  padding:20px;
+}
+
+
+section{
+  padding:30px;
+}
+section:first-child{
+  padding:30px 30px 0px;
+}
+
+section:nth-child(2n){
+  background:#f3f3f3;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn-switch {
+  width: 148px;
+  height: 250px;
+  margin: 0 auto;
+  padding: 20px;
+
+  border-radius: 10px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#444),
+    to(#222)
+  );
+  background: -webkit-linear-gradient(top, #444, #222);
+  background: linear-gradient(180deg, #444, #222);
+  -webkit-box-shadow: 0 0 0 8px rgba(0, 0, 0, 0), 0 0 3px 1px black,
+    inset 0 8px 4px -8px white;
+  box-shadow: 0 0 0 8px rgba(0, 0, 0, 0), 0 0 3px 1px black,
+    inset 0 8px 4px -8px white;
+}
+
+.btn-switch input {
+  display: none;
+}
+
+.btn-switch input:checked + .btn-switch-bg .on {
+  height: 20px;
+
+  -webkit-transform: scaleY(0.85);
+
+  transform: scaleY(0.85);
+
+  opacity: 0.6;
+}
+
+.btn-switch input:checked + .btn-switch-bg .off {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+
+  opacity: 0.5;
+}
+
+.btn-switch input:checked + .btn-switch-bg .btn-switch-in {
+  margin-top: 20px;
+
+  -webkit-box-shadow: inset 8px -4px 5px -7px black,
+    inset -8px -4px 5px -7px black, 0 -3px 8px -4px rgba(250, 250, 250, 0.4),
+    inset 0 3px 4px -2px #0a0a0a, inset 0 280px 40px -200px rgba(0, 0, 0, 0.2),
+    inset 0 -200px 40px -200px rgba(180, 180, 180, 0.2);
+
+  box-shadow: inset 8px -4px 5px -7px black, inset -8px -4px 5px -7px black,
+    0 -3px 8px -4px rgba(250, 250, 250, 0.4), inset 0 3px 4px -2px #0a0a0a,
+    inset 0 280px 40px -200px rgba(0, 0, 0, 0.2),
+    inset 0 -200px 40px -200px rgba(180, 180, 180, 0.2);
+}
+
+.btn-switch input:checked + .btn-switch-bg {
+  background-image: -webkit-linear-gradient(90deg, #000 30%, transparent 70%),
+    -webkit-linear-gradient(180deg, rgba(250, 250, 250, 0) 0%, rgba(
+            250,
+            250,
+            250,
+            0.4
+          )
+          50%, rgba(150, 150, 150, 0) 100%);
+  -webkit-box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.1),
+    -30px 30px 30px -20px rgba(0, 0, 0, 0.1), 0 30px 30px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px 0 rgba(0, 0, 0, 0.6);
+  box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.1),
+    -30px 30px 30px -20px rgba(0, 0, 0, 0.1), 0 30px 30px 0 rgba(0, 0, 0, 0.2),
+    inset 0 1px 2px 0 rgba(0, 0, 0, 0.6);
+}
+
+#onoff,
+.btn-switch-bg,
+.btn-switch-in,
+.on,
+.off {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn-switch-bg {
+  width: 108px;
+  height: 210px;
+  padding: 4px 4px;
+
+  -webkit-transition: all 0.2s;
+
+  transition: all 0.2s;
+
+  border-radius: 5px;
+  background-color: #000;
+  background-image: -webkit-linear-gradient(
+      0deg,
+      transparent 30%,
+      transparent 70%
+    ),
+    -webkit-linear-gradient(0deg, rgba(150, 150, 150, 0) 30%, rgba(
+            150,
+            150,
+            150,
+            0.1
+          )
+          50%, rgba(150, 150, 150, 0) 70%);
+  -webkit-box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.3),
+    -30px 30px 30px -20px rgba(0, 0, 0, 0.3), 0 30px 30px 0 rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 0 #333;
+  box-shadow: 30px 30px 30px -20px rgba(0, 0, 0, 0.3),
+    -30px 30px 30px -20px rgba(0, 0, 0, 0.3), 0 30px 30px 0 rgba(0, 0, 0, 0.3),
+    inset 0 -1px 0 0 #333;
+}
+
+.btn-switch-in {
+  position: relative;
+
+  display: block;
+
+  width: 100px;
+  height: 178px;
+
+  -webkit-transition: all 0.2s;
+
+  border-radius: 10px;
+  background-color: #272727;
+  -webkit-box-shadow: inset 8px 6px 5px -7px black,
+    inset -8px 6px 5px -7px black,
+    inset 0 -3px 2px -2px rgba(200, 200, 200, 0.5), 0 3px 3px -2px black,
+    inset 0 -230px 60px -200px rgba(255, 255, 255, 0.2),
+    inset 0 220px 40px -200px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 8px 6px 5px -7px black, inset -8px 6px 5px -7px black,
+    inset 0 -3px 2px -2px rgba(200, 200, 200, 0.5), 0 3px 3px -2px black,
+    inset 0 -230px 60px -200px rgba(255, 255, 255, 0.2),
+    inset 0 220px 40px -200px rgba(0, 0, 0, 0.3);
+}
+
+.btn-switch-in .on {
+  position: absolute;
+  top: 30px;
+  left: calc(50% - 2px);
+
+  width: 4px;
+  height: 22px;
+
+  -webkit-transition: all 0.1s ease;
+
+  transition: all 0.1s ease;
+
+  opacity: 0.5;
+  background: #fff;
+}
+
+.btn-switch-in .off {
+  position: absolute;
+  bottom: 30px;
+  left: calc(50% - 12px);
+
+  width: 24px;
+  height: 24px;
+
+  -webkit-transition: all 0.3s ease;
+
+  transition: all 0.3s ease;
+  -webkit-transform: scaleY(0.9);
+  transform: scaleY(0.9);
+
+  opacity: 0.8;
+  border: 4px solid #fff;
+  border-radius: 50%;
+}
+
+/*その他と主な共通部分は省略*/
+
+a.btn-radius-solid {
+  background: #f1e767;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1e767), to(#feb645));
+  background: -webkit-linear-gradient(top, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to bottom, #f1e767 0%, #feb645 100%);
+}
+
+a.btn-radius-solid:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#f1e767), to(#feb645));
+  background: -webkit-linear-gradient(bottom, #f1e767 0%, #feb645 100%);
+  background: linear-gradient(to top, #f1e767 0%, #feb645 100%);
+}
